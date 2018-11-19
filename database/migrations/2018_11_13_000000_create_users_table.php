@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuarioTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,14 +15,13 @@ class CreateUsuarioTable extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cod')->unique();
-            $table->string('ci')->unique();
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('correo')->unique();
-            $table->timestamp('correo_verificado')->nullable();
-            $table->string('alias');
-            $table->string('password');
+            $table->string('ci',10)->unique();
+            $table->string('nombre',50);
+            $table->string('apellido',50);
+            $table->string('correo',60)->unique();
+            $table->string('alias',50);
+            $table->string('password',50);
+            $table->char('estado',1)->default('1');
             $table->rememberToken();
             $table->timestamps();
         });
