@@ -19,8 +19,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-//Usuario (Inicio)
-Route::get('guardarUsuario/{ci}/{nombre}/{apellido}/{correo}/{alias}/{password}', 'UsuarioController@StoreUsuario');
-Route::get('hola/', 'UsuarioController@Hola');
-//Usuario (Fin)
